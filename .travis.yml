@@ -1,7 +1,10 @@
 language: python
-script: tox
-before_install:
-    - sudo apt-get update -qq
-    - sudo apt-get install -qq python3.5
+addons:
+  apt:
+    sources:
+      - deadsnakes
+    packages:
+      - python3.5
 install:
     - pip install tox
+script: tox
